@@ -16,7 +16,10 @@ def search(target, total):
 		iterations += 1
 	## Check https://github.com/n4xh4ck5/RastLeak - thanks Nacho
 	url_base = f"https://www.google.com/search?q=(ext:pdf OR ext:doc OR ext:docx OR ext:xls OR ext:xlsx OR ext:ppt OR ext:pptx)+(site:*.{target} OR site:{target})&num={num}"
-	cookies = {"CONSENT": "YES+srp.gws"}
+	cookies = {
+		"CONSENT": "PENDING+999",
+		"SOCS": "CAESXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_",
+	}
 	while (start < iterations) and (len(documents) < total):
 		try:
 			url = url_base + f"&start={start}"
